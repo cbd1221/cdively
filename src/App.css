@@ -1,38 +1,139 @@
-.App {
+/* Base styles */
+body {
+  background-color: #121212; 
+  color: #e0e0e0; 
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h4 {
+  color: #bb86fc; 
+  margin: 20px 0;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  background-color: #03dac6; 
+  border: none;
+  color: #121212;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button:hover {
+  border-width: 3;
+  border-color: #bb86fc; 
+  box-shadow: 0 0 8px #bb86fc; 
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+button:active {
+  background-color: #018786;
+}
+
+/* forecast css */
+.forecast-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px; /* Spacing between cards */
+  padding: 20px;
+}
+
+/* Forecast card */
+.forecast-card {
+  background-color: #1e1e1e; 
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 80%; 
+  max-width: 400px; 
+  margin: 10px auto;
+  text-align: center;
+}
+
+.forecast-card p {
+  margin: 5 0;
+}
+
+.day-selector {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.location-container {
+  justify-content: center; 
+  align-items: center;  
+  flex-direction: column; 
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+.location-container > div {
+  width: 100%; 
+  max-width: max-content; 
+  margin: auto; 
+}
+
+.weather-list {
+  max-width: max-content;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  list-style: none;
+}
+
+input[type="text"] {
+  background-color: #2a2a2a;
+    color: #e0e0e0; 
+    border: 1px solid #444; 
+    padding: 10px; 
+    border-radius: 4px;
+    margin: 5px 0; 
+    width: calc(100% - 22px); 
+    box-sizing: border-box; 
+    transition: border-color 0.3s, box-shadow 0.3s; 
+}
+
+input[type="text"]:focus {
+  border-color: #bb86fc; 
+  box-shadow: 0 0 8px rgba(187, 134, 252, 0.7); 
+  outline: none; 
+}
+
+
+input[type="text"]::placeholder {
+  color: #aaa; 
+  opacity: 1; 
+}
+
+
+input[type="submit"], button {
+  background-color: #03dac6; 
+  color: #121212; 
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; 
+  margin-top: 10px;
+}
+
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+  .forecast-card {
+      width: 90%;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+.App-logo {
+  scale: 0.5;
 }
