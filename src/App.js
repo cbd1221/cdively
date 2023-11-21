@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-          <a href='/weather'>Weather</a>
+          <a href='/https://weather-7fzx3aw9a-cbd1221s-projects.vercel.app/'>Weather</a>
         <img src={image} className="App-logo" alt="logo" />
       </header>
     </div>
