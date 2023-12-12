@@ -1,9 +1,9 @@
 import './App.css';
 import image from './wizard (2).png';
+
+
 function App() {
  
-
-
   document.addEventListener('keydown', function(event) {
     const wizard = document.getElementById('wizard');
     var button = document.getElementById('weatherbtn');
@@ -13,7 +13,7 @@ function App() {
 
     const overlapX = buttonRect.left < wizardRect.right && buttonRect.right > wizardRect.left;
 
-    const stepSize = 5; // Change this value to adjust movement speed
+    const stepSize = 2.3;
   
     // Get current left position
     let leftPosition = wizard.style.left ? parseInt(wizard.style.left, 10) : 0;
@@ -27,6 +27,11 @@ function App() {
       wizard.style.transform = 'scaleX(-1)';
       if (overlapX) {
         button.classList.add('weather-hover');
+        this.addEventListener('keydown', function(event) {
+          if (event.key === 'Enter' && overlapX) {
+            handleClick();
+          }
+        })
       } else {
         button.classList.remove('weather-hover');
       }
@@ -38,24 +43,23 @@ function App() {
         wizard.style.transform = 'scaleX(1)';
         if (overlapX) {
           button.classList.add('weather-hover');
+          this.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' && overlapX) {
+              handleClick();
+            }
+          })
         } else {
           button.classList.remove('weather-hover');
       }
     }
   }});
 
-
-
-
-
-
-
-
   const handleClick = () => {
     //open the following page
     window.location.href =
       'https://weather.cdively.dev';
   }
+
 
   return (
     <div className="App">
@@ -66,5 +70,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
